@@ -1,0 +1,15 @@
+app:
+    resource: "@AppBundle/Controller/DefaultController.php"
+    type:     annotation
+background:
+    type:     rest
+    resource: AppBundle\Controller\BackgroundController
+    
+post_backgrounds:
+    path: /Backgrounds
+    defaults: {_controller: AppBundle:Background:postBackgrounds}
+    
+patch_backgrounds:
+    path: /Backgrounds/{id}
+    defaults: {_controller: AppBundle:Background:patchBackgrounds}
+    
