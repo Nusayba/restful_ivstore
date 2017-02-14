@@ -12,7 +12,9 @@ class ActivePeriodeType extends AbstractType{
         $builder->add('nom');
         $builder->add('dateDebut', \Symfony\Component\Form\Extension\Core\Type\DateTimeType::class)
                 ->add('dateFin', \Symfony\Component\Form\Extension\Core\Type\DateTimeType::class)
-                ->add('zone', \Symfony\Bridge\Doctrine\Form\Type\EntityType::class,array("class"=>"AppBundle:Zone"));
+                ->add('zone', \Symfony\Bridge\Doctrine\Form\Type\EntityType::class,array("class"=>"AppBundle:Zone"))
+                ->add('submit', \Symfony\Component\Form\Extension\Core\Type\SubmitType::class)
+                ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

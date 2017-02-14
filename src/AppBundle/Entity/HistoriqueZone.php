@@ -63,7 +63,6 @@ class HistoriqueZone
     
     /**
      * @ORM\ManyToMany(targetEntity="Point", inversedBy="zones")
-     * @ORM\JoinTable(name="point_historique")
      */
     private $points;
 

@@ -116,4 +116,8 @@ class Zone
     {
         return $this->activePeriodes;
     }
+    
+    public function __toString() {
+        return "nom zone";
+    }
 }

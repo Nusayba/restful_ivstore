@@ -13,3 +13,14 @@ patch_backgrounds:
     path: /Backgrounds/{id}
     defaults: {_controller: AppBundle:Background:patchBackgrounds}
     
+active_periode:
+    type:     rest
+    resource: AppBundle\Controller\ActivePeriodeZoneController
+    
+post_active_periodes:
+    path: /Zones/{id}/activePeriodes
+    defaults: {_controller: AppBundle:ActivePeriodeZone:postActivePeriodes}
+    
+delete_zone:
+    path: /Zones/{id}
+    defaults: {_controller: AppBundle:Zone:removeZone}

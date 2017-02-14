@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Point
  *
  * @ORM\Table(name="point")
+ * uniqueConstraints={@ORM\UniqueConstraint(name="position_point_historique_zone", columns={"position", "point_historique"})})
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PointRepository")
  */
 class Point
@@ -44,6 +45,7 @@ class Point
     
     /**
      * @ORM\ManyToMany(targetEntity="HistoriqueZone", mappedBy="points")
+     * * @ORM\JoinTable(name="point_historique")
      */
     private $zones;
 
