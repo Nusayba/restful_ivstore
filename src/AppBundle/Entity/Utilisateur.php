@@ -170,4 +170,8 @@ class Utilisateur
     {
         return $this->actionZones;
     }
+    
+    function __toString() {
+        return $this->pseudo;
+    }
 }

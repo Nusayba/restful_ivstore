@@ -4,6 +4,9 @@ app:
 background:
     type:     rest
     resource: AppBundle\Controller\BackgroundController
+zone:
+    type:     rest
+    resource: AppBundle\Controller\ZoneController
     
 post_backgrounds:
     path: /Backgrounds
