@@ -1,4 +1,7 @@
-{# empty Twig template #}
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div> 
 {% if form is defined %}
     {{ form_start(form) }}
         {{ form_errors(form) }}
@@ -13,3 +16,5 @@
 {% if message is defined %}
 {{ message }}
 {% endif %}
+</div>
+{% endblock %}

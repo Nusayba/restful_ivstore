@@ -1,4 +1,7 @@
-{# empty Twig template #}
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div> 
 <h1> post backgrounds </h1>
 
 {% if form is defined %} 
@@ -6,3 +9,6 @@
 {% else %}
     le background a été ajouté
 {% endif %}
+
+ </div>
+{% endblock %}

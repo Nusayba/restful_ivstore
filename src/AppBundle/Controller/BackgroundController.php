@@ -36,7 +36,7 @@ class BackgroundController extends Controller
                 ->find($request->get('id'));
        
         if (empty($background)) {
-            return \FOS\RestBundle\View\View::create(['message' => 'Place not found'], Response::HTTP_NOT_FOUND);
+            return \FOS\RestBundle\View\View::create(['message' => 'Background not found'], Response::HTTP_NOT_FOUND);
         }
 
         return array('background'=>$background);
@@ -89,7 +89,7 @@ class BackgroundController extends Controller
                 ->find($request->get('id'));
 
         if (empty($background)) {
-            return \FOS\RestBundle\View\View::create(['message' => 'Place not found'], Response::HTTP_NOT_FOUND);
+            return \FOS\RestBundle\View\View::create(['message' => 'Background not found'], Response::HTTP_NOT_FOUND);
         }
 
         $form = $this->createForm(BackgroundType::class, $background);
@@ -116,7 +116,7 @@ class BackgroundController extends Controller
                 ->getRepository('AppBundle:Background')
                 ->find($request->get('id')); 
         if (empty($background)) {
-            return \FOS\RestBundle\View\View::create(['message' => 'Place not found'], Response::HTTP_NOT_FOUND);
+            return \FOS\RestBundle\View\View::create(['message' => 'Background not found'], Response::HTTP_NOT_FOUND);
         }
         $form = $this->createForm(BackgroundType::class,$background);
         

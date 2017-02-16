@@ -1,4 +1,7 @@
-{# empty Twig template #}
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div>
 {% for zone in zones %}
     
     {{ zone.id }}
@@ -11,3 +14,6 @@
        x={{ point.x }}, y={{point.y }}, position={{ point.position }} 
     {% endfor %}
 {% endfor %}
+
+</div>
+{% endblock %}

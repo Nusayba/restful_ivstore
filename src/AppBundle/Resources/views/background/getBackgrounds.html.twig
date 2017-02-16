@@ -1,4 +1,9 @@
-{# empty Twig template #}
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div>  
 {% for background in backgrounds %}
     {{ background.id }} | {{ background.src }} | {{ background.heureDate|date() }}<br/>
 {% endfor %}
+    </div>
+{% endblock %}
