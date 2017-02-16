@@ -30,4 +30,5 @@ class BackgroundType extends AbstractType{
             'csrf_protection' => false
         ]);
     }
+    
 }

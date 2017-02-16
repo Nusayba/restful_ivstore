@@ -9,6 +9,8 @@ use AppBundle\Entity\Background;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use AppBundle\Form\Type\BackgroundType;
+use FOS\RestBundle\Controller\Annotations\View;
+
 
 class BackgroundController extends Controller
 {
@@ -17,30 +19,16 @@ class BackgroundController extends Controller
      * @Rest\Get("/backgrounds")
      */
     public function getBackgroundsAction(Request $request){
+        //recherche des backgrounds
         $backgrounds = $this->get('doctrine.orm.entity_manager')
                 ->getRepository('AppBundle:Background')
                 ->findAll();
-
+        
         // Gestion de la réponse
         return array('backgrounds'=>$backgrounds);
     }
     
-    /**
-     * @Rest\View()
-     * @Rest\Get("/backgrounds/{id}")
-     */
-    public function getBackgroundAction(Request $request)
-    {
-        $background = $this->get('doctrine.orm.entity_manager')
-                ->getRepository('AppBundle:Background')
-                ->find($request->get('id'));
-       
-        if (empty($background)) {
-            return \FOS\RestBundle\View\View::create(['message' => 'Background not found'], Response::HTTP_NOT_FOUND);
-        }
-
-        return array('background'=>$background);
-    }
+    
     
     /**
      * @Rest\View(statusCode=Response::HTTP_CREATED)
@@ -64,7 +52,7 @@ class BackgroundController extends Controller
     
     /**
      * @Rest\View(statusCode=Response::HTTP_NO_CONTENT)
-     * @Rest\Delete("/backgrounds/{id}")
+     * @Rest\Delete("/Backgrounds/{id}")
      */
     public function removeBackgroundAction(Request $request)
     {
@@ -76,6 +64,7 @@ class BackgroundController extends Controller
             $em->remove($background);
             $em->flush();
         }
+        return $this->redirectToRoute('get_backgrounds');
     }
     
     /**

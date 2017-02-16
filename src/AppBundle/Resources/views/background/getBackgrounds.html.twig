@@ -1,9 +1,17 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
+    
+    
+    
     <div>  
 {% for background in backgrounds %}
-    {{ background.id }} | {{ background.src }} | {{ background.heureDate|date() }}<br/>
+    {{ background.id }} | {{ background.src }} | {{ background.heureDate|date() }}
+    | <a href="{{ path('patch_backgrounds',{id:background.id}) }}">Modifier</a>
+    | <a href="{{ path('remove_background',{id:background.id}) }}">Supprimer</a>
+    <br/>
 {% endfor %}
     </div>
+
+
 {% endblock %}

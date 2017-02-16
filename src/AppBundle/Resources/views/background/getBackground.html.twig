@@ -1,6 +1,11 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    {{ background.src }}
+    {% if form is defined %}
+        {{ form(form) }}
+    {% endif %}
+    {% if background is defined %}
+        {{ background.src }}
+    {% endif %}
 
 {% endblock %}

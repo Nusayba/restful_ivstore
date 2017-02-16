@@ -5,8 +5,15 @@
 {% block body %}
 <h1>Welcome to the ActivePeriodeZone:getActivePeriodes page</h1>
 
-{% for activePeriode in activePeriodes %}
+{% if activePeriodes is defined %}
+    {% for activePeriode in activePeriodes %}
+
+      {{ activePeriode.nom }}
+      
+    {% endfor %}
+{% endif %}
+{% if message is defined %}
     
-  {{ activePeriode.nom }}
-{% endfor %}
+    {{ message }}
+{% endif %}
 {% endblock %}

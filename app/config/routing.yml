@@ -12,6 +12,14 @@ post_backgrounds:
     path: /Backgrounds
     defaults: {_controller: AppBundle:Background:postBackgrounds}
     
+get_background:
+    path: /backgrounds/{id}
+    defaults: {_controller: AppBundle:test:getBackground}
+    
+remove_background:
+    path: /Backgrounds/{id}
+    defaults: {_controller: AppBundle:Background:removeBackground}
+    
 patch_backgrounds:
     path: /Backgrounds/{id}
     defaults: {_controller: AppBundle:Background:patchBackgrounds}
